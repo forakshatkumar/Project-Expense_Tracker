@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Expense Tracker</title>
+
+    <link rel="stylesheet" href="tracker.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
+  </head>
+
+  <body>
+    <header class="headbar">
+      <div class="logobar">
+        <img src="brand.png" class="logo" alt="Expense Tracker Logo" />
+      </div>
+
+      <nav class="features">
+        <a href="#dashboard"><i class="fa-solid fa-house"></i> Dashboard</a>
+        <a href="#analytics"><i class="fa-solid fa-chart-pie"></i> Analytics</a>
+        <a href="#footer"><i class="fa-solid fa-user"></i> About</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Expense Tracker</h1>
+
+      <p>
+        Keep track of your daily expenses and visualize where your money goes.
+      </p>
+    </section>
+
+    <main class="container" id="dashboard">
+      <section class="add">
+        <h2 class="Heading">Add Expense</h2>
+
+        <label for="type">Expense Type</label>
+
+        <div class="inputBox">
+          <i class="fa-solid fa-wallet"></i>
+          <input type="text" id="type" placeholder="Example : Food" />
+        </div>
+
+        <label for="amount">Amount</label>
+
+        <div class="inputBox">
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+          <input type="number" id="amount" placeholder="Enter amount" />
+        </div>
+
+        <button id="btn">
+          <i class="fa-solid fa-plus"></i>
+          Add Expense
+        </button>
+      </section>
+
+      <section class="list">
+        <div class="listHeader">
+          <h2>Expense History</h2>
+
+          <span id="expenseCount">0 Items</span>
+        </div>
+
+        <p id="emptyMessage">
+          <i class="fa-solid fa-receipt"></i><br /><br />
+          No expenses added yet.
+        </p>
+
+        <ul id="makelist"></ul>
+      </section>
+    </main>
+
+    <section class="totalbar">
+      <div id="total">
+        <div>
+          <p class="month">Current Month</p>
+
+          <h2>Total Expense</h2>
+        </div>
+
+        <h1 id="calctotal">₹0</h1>
+      </div>
+    </section>
+
+    <section class="sectionChart" id="analytics">
+      <div class="chartHeading">
+        <h2>Expense Breakdown</h2>
+
+        <p>Your spending distribution by category.</p>
+      </div>
+
+      <canvas id="myChart"></canvas>
+    </section>
+
+    <footer id="footer">
+      <p>Designed & Developed by <strong>Akshat Kumar</strong></p>
+    </footer>
+
+    <script src="tracker.js"></script>
+  </body>
+</html>
